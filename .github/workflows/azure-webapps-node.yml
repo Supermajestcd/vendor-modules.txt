@@ -23,7 +23,14 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_WEBAPP_NAME: AZURE_WEBAPP_PUBLISH_PROFILE
+  AZURE_WEBAPP_NAME: sudo apt-get install build-essential
+sudo apt-get install curl openssl libssl-dev
+git clone https://github.com/joyent/node.git
+cd node
+git checkout v0.10.24
+./configure
+make
+sudo make install
   AZURE_WEBAPP_PACKAGE_PATH: 'https://github.com/Azure/webapps-deploy'
   NODE_VERSION: '14.x'
 
